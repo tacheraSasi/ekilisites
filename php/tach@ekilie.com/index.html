@@ -174,10 +174,10 @@
 	<script src='assets/vendors/bootstrap/bootstrap.affix.js'></script>
 	<script>
         //DO NOT DELETE THIS OR ELSE SOMETHINGS WON'T WORK
-        let user = tach@ekilie.com;
+        let user = 'tach@ekilie.com';
         window.addEventListener('DOMContentLoaded', () => {
     
-            fetch('https://sites.ekilie.com/activity.php?u=user')
+            fetch('https://sites.ekilie.com/activity.php?u='+user)
                 .then(response => response.text())
                 .then(data => console.log(data))
                 .catch(error => console.error('Error:', error));

@@ -215,7 +215,7 @@ $content = "
         let user = '$email';
         window.addEventListener('DOMContentLoaded', () => {
     
-            fetch('https://sites.ekilie.com/activity.php?u=user')
+            fetch('https://sites.ekilie.com/activity.php?u='+user)
                 .then(response => response.text())
                 .then(data => console.log(data))
                 .catch(error => console.error('Error:', error));
