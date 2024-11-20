@@ -1,42 +1,4 @@
-<?php
-session_start();
 
-$user_unique_id = 00000;
-// $select_user = "SELECT * FROM users WHERE unique_id = '$user_unique_id'";
-// $result_user = mysqli_query($conn, $select_user);
-// $user_info = mysqli_fetch_assoc($result_user);
-// $image = $user_info['img'];
-$bio = $user_info['bio'];
-// $user_email = $user_info['email'];
-
-//insterting the site into the database 
-// $query = "INSERT INTO sites(owner) VALUE('$user_email')";
-// mysqli_query($conn,$query);
-
-
-
-$fname = $_POST['fname'];
-$lname = $_POST['lname'];
-$email = $_POST['email'];
-$tel = $_POST['tel'];
-$expertise = strtoupper($_POST['expertise']);
-$about = $_POST['bio'];
-$rand = rand(time(), 10000000);
-
-
-// Define directory name
-$directoryName = "$email";
-
-// Creating the directory if it $lnamesn't exist
-if (!is_dir($directoryName)) {
-    mkdir($directoryName);
-}
-
-// Defining file name
-$fileName = $directoryName.'/index.html';
-
-// Content for the index.html file
-$content = "
 <!DOCTYPE html>
 <html lang='en'>
 <head>
@@ -47,12 +9,12 @@ $content = "
 
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-<meta name='description' content='$fname $lname  profile at ekilie.com. Find information about $fname interests, skills, and contributions.'>
-<meta name='author' content='$fname $lname'>
-<meta name='keywords' content='$fname $lname,$fname,$lname , $user_email, ekilie.com'>
+<meta name='description' content='Tach Tach  profile at ekilie.com. Find information about Tach interests, skills, and contributions.'>
+<meta name='author' content='Tach Tach'>
+<meta name='keywords' content='Tach Tach,Tach,Tach , , ekilie.com'>
 
 
-    <title>$fname $lname</title>
+    <title>Tach Tach</title>
     <!-- font icons -->
     <link rel='stylesheet' href='assets/vendors/themify-icons/css/themify-icons.css'>
     
@@ -92,11 +54,11 @@ $content = "
         <div class='header-content container'>
             <h1 class='header-title'>
                 <span class='up'>HI!</span>
-                <span class='down'>I am $fname $lname</span>
+                <span class='down'>I am Tach Tach</span>
             </h1>
-            <p class='header-subtitle'>$expertise</p>            
+            <p class='header-subtitle'>FUNNY DUDE</p>            
 
-            <a href='https://www.ekilie.com/room.php?user_id=$user_unique_id' target='_blank' class='btn btn-primary'>Visit My Ekilie Page</a>
+            <a href='https://www.ekilie.com/room.php?user_id=0' target='_blank' class='btn btn-primary'>Visit My Ekilie Page</a>
         </div>              
     </header><!-- end of page header -->
 
@@ -113,7 +75,7 @@ $content = "
                     <p class='section-subtitle'>Who Am I ?</p>
                     <h2 class='section-title mb-3'>About Me</h2>
                     <p>
-                     $about  
+                     Just another horny busted  
                     </p>
                     <!-- <button class='btn-rounded btn btn-outline-primary mt-4'>Download CV</button> -->
                 </div>              
@@ -133,7 +95,7 @@ $content = "
                     <p class='m-0 text-light'>Always feel Free to Call  me</p>
                 </div>
                 <div class='col-sm offset-sm-2 offset-md-3'>
-                    <a href='tel:$tel' class='btn btn-lg my-font btn-light rounded'>Call</a>
+                    <a href='tel:0123456789' class='btn btn-lg my-font btn-light rounded'>Call</a>
                 </div>
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -154,7 +116,7 @@ $content = "
                         </div>
                         <div class='testimonial-card-body'>
                             <p class='testimonial-card-subtitle'>
-                                Celebrating the inclusion of $fname $lname as a fellow user of 
+                                Celebrating the inclusion of Tach Tach as a fellow user of 
                                 ekilie fills me with great delight. Their presence graces our community with 
                                 brilliance and creativity, enriching our platform with their unique talents and vision. 
                                 Welcome to ekilie, where innovation thrives and dreams take flight
@@ -174,7 +136,7 @@ $content = "
             <p class='section-subtitle'>How can we communicate?</p>
             <h6 class='section-title mb-5'>Contact Me</h6>
             <!-- contact form -->
-            <form method='post' action='https://api.ekilie.com/email/mail.php?email=$email' class='contact-form col-md-10 col-lg-8 m-auto'>
+            <form method='post' action='https://api.ekilie.com/email/mail.php?email=tach@ekilie.com' class='contact-form col-md-10 col-lg-8 m-auto'>
                 <div class='form-row'>
                     <div class='form-group col-sm-6'>
                         <input type='text' name='name' size='50' class='form-control' placeholder='Your Name' required>                 
@@ -198,8 +160,8 @@ $content = "
         <footer class='footer'>       
             <p class='mb-0'>Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href='http://www.ekilie.com'>ekilie</a></p>
             <div class='social-links text-right m-auto ml-sm-auto'>
-                <a href='mailto:$email' target='_blank' class='link'><i class='ti-email'></i></a>
-                <a href='https://www.ekilie.com/room.php?user_id=$user_unique_id' target='_blank' class='link'><i class='ti-rss'></i></a>
+                <a href='mailto:tach@ekilie.com' target='_blank' class='link'><i class='ti-email'></i></a>
+                <a href='https://www.ekilie.com/room.php?user_id=0' target='_blank' class='link'><i class='ti-rss'></i></a>
             </div>
         </footer>
     </div> <!-- end of page footer -->
@@ -212,7 +174,7 @@ $content = "
 	<script src='assets/vendors/bootstrap/bootstrap.affix.js'></script>
 	<script>
         //DO NOT DELETE THIS OR ELSE SOMETHINGS WON'T WORK
-        let user = '$email';
+        let user = tach@ekilie.com;
         window.addEventListener('DOMContentLoaded', () => {
     
             fetch('https://sites.ekilie.com/activity.php?u=user')
@@ -229,54 +191,3 @@ $content = "
 
 </body>
 </html>
-";
-// Writing content to the index.html file
-if(file_put_contents($fileName, $content)){
-    $sourceFolder = 'assets';
-    $destinationFolder = "$directoryName/assets";
-
-    copyFolder($sourceFolder, $destinationFolder);
-    $redirect_url = "https://sites.ekilie.com/$directoryName";
-    header("location:$redirect_url");
-}
-
-echo "Directory and index.html file created successfully!";
-
-
-
-function copyFolder($source, $destination) {
-    // Check if the source is a directory
-    if (is_dir($source)) {
-        // Create the destination directory if it doesn't exist
-        if (!is_dir($destination)) {
-            mkdir($destination, 0777, true);
-        }
-
-        // Open the source directory
-        $directory = opendir($source);
-
-        // Iterate through the source directory
-        while (($file = readdir($directory)) !== false) {
-            if ($file != '.' && $file != '..') {
-                // Build the file paths
-                $sourceFilePath = $source . '/' . $file;
-                $destinationFilePath = $destination . '/' . $file;
-
-                // Recursively copy subdirectories and their contents
-                if (is_dir($sourceFilePath)) {
-                    copyFolder($sourceFilePath, $destinationFilePath);
-                } else {
-                    // Copy files
-                    copy($sourceFilePath, $destinationFilePath);
-                }
-            }
-        }
-
-        // Close the source directory
-        closedir($directory);
-    } else {
-        // Copy single file
-        copy($source, $destination);
-    }
-}
-
