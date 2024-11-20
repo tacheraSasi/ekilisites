@@ -1,17 +1,17 @@
 <?php
 session_start();
 
-$user_unique_id = $_SESSION['unique_id'];
-$select_user = "SELECT * FROM users WHERE unique_id = '$user_unique_id'";
-$result_user = mysqli_query($conn, $select_user);
-$user_info = mysqli_fetch_assoc($result_user);
-$image = $user_info['img'];
+$user_unique_id = 00000;
+// $select_user = "SELECT * FROM users WHERE unique_id = '$user_unique_id'";
+// $result_user = mysqli_query($conn, $select_user);
+// $user_info = mysqli_fetch_assoc($result_user);
+// $image = $user_info['img'];
 $bio = $user_info['bio'];
-$user_email = $user_info['email'];
+// $user_email = $user_info['email'];
 
 //insterting the site into the database 
-$query = "INSERT INTO sites(owner) VALUE('$user_email')";
-mysqli_query($conn,$query);
+// $query = "INSERT INTO sites(owner) VALUE('$user_email')";
+// mysqli_query($conn,$query);
 
 
 
@@ -50,9 +50,7 @@ $content = "
 <meta name='description' content='$fname $lname  profile at ekilie.com. Find information about $fname interests, skills, and contributions.'>
 <meta name='author' content='$fname $lname'>
 <meta name='keywords' content='$fname $lname,$fname,$lname , $user_email, ekilie.com'>
-<meta name='bio' content='$bio'>
-<link href='https://www.ekilie.com/php/images/$image' rel='icon'>
-<link href='https://www.ekilie.com/php/images/$image' rel='apple-touch-icon'>
+
 
     <title>$fname $lname</title>
     <!-- font icons -->
